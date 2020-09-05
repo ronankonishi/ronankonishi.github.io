@@ -256,6 +256,10 @@ a.resume:hover{
 	width: 100%;
 }
 
+.posts .post .image-attachment-square {
+	width: 50%;
+}
+
 .post .subtitle-italics {
 	font-style: italic;
 	display: inline;
