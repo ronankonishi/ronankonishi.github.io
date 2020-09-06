@@ -196,16 +196,17 @@ hr {
 	padding-top: 2px;
 }
 
-a.resume {
+a.link {
 	color: #7e7e7e;
 	font-style: italic;
 	font-size: 15px;
 }
 
-a.resume:hover{
+a.link:hover{
 	color: #111;
 	text-decoration: underline !important;
 }
+
 
 
 /*Portfolio*/
