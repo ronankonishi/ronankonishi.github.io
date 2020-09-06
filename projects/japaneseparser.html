@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../resources/css/style.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
+
+		<title>ronankonishi</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="inner-wrap">
+				<div class="nav-wrapper">
+					<div class="logo">
+						<h1><a href="../index.html">RonanKonishi</a></h1>
+					</div>
+					<ul>
+						<li><a href="https://www.linkedin.com/in/ronan-konishi/">Linkedin</a></li>
+						<li><a href="https://github.com/ronankonishi">Github</a></li>
+						<li><a href="../projects.html">Projects</a></li>
+						<li><a href="../index.html">Home</a></li>
+					</ul>
+					<div style="margin-top: 13px ">
+						<hr>
+					</div>
+				</div>
+
+				<div class="main portfolio">
+					<a href="../projects.html" class="btn btn-outline-secondary btn-sm">&lt</a>
+					<br>
+					<br>
+					<div class="post">
+						<h3>Japanese Transcript Parser</h3>
+						<div class="subtitle-container">
+							<p class="subtitle-italics">June 2020 - Current</p>
+						</div>
+
+						<div class="blog-short-container">
+							<h3> Project Overview </h3>
+							<p> The goal of this project was to learn how to do webscraping and automize file extraction and parsing. Although, there were several problems that I am still trying to fix, the overall mechanism for word extraction works (with minor manual input). </p>
+
+							<h3> Technologies </h3>
+							<p> In building this project, Java was used. </p>
+
+
+							<h3> How the parse worked </h3>
+                            <p> Given an input name of "3-gatsu no Lion", the following process was executed: 
+								<ol>
+									<li>JSOUP was used to get the html of the website with a list of Japanese TV shows and corresponding links to a transcript zip download page.</li>
+									<li>JSOUP was used to parse the html and extract the link to the "transcript zip download page" for "3-gatsu no Lion".</li>
+									<li>Chromium was used to manually go automatically go through the UI of the "transcript zip download page" and download the transcript zip file (which was required since the initial endpoint of the link was a loading screen that later rendered the page with a download button for the zip file).</li>
+									<li>The zip file was unziped and the zip file was deleted.</li>
+									<li>The Transcript file for the TV show was extracted (manual input because the folder structure was different for each of the TV Shows).</li>
+									<li>The Transcript file was filtered (so that only the words (and no metadata) were extracted).</li>
+									<li>The Java BreakIterator was used to separate the words from the Transcript file.</li>
+									<li>Each word and its frequency were entered into a hashmap.</li>
+									<li>Extraction of the most common words was performed.</li>
+								</ol>
+                            </p>
+                            
+
+						</div>
+					</div>
+				</div>
+				<div class="footer-wrapper">
+                    <p>&#64 2020 ronankonishi.github.io</p>
+                </div>
+			</div>
+		</div>
+		<script rel="javascript" src="../resources/js/script.js"></script>
+	</body>
+</html>
