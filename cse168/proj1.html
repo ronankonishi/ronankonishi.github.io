@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../resources/css/style.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
+
+		<title>CSE 168 | Ronan Konishi</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="inner-wrap">
+				<div class="nav-wrapper">
+					<div class="logo">
+						<h1><a href="index.html">CSE 168 | Ronan Konishi</a></h1>
+					</div>
+					<ul>
+						<li><a href="proj1.html">Assignment 1</a></li>
+					</ul>
+					<div style="margin-top: 13px ">
+						<hr>
+					</div>
+				</div>
+
+				<div class="main about">
+					<h5>Ray Trace, Assignment 1:</h5>
+					<hr>
+					<div class="content">
+						<p>This project was the most challenging programming assignment I have ever worked on in the 3 years I have been an undergrad at UCSD. The codebase was written in C++, with no external graphics libraries (e.g. Optix, OpenGL). All of the library functionality for vectors, matricies, and their corresponding mathematical operations were implemented by me.</p>
+
+						<p>The goal of this assignment was to develop a ray tracer. This required the implementation of a camera, a ray-surface intersection tests for spheres and triangles with possible transformations, a recursive lighting and shadowing model, and an acceleration structure. Below are images rendering using the developed ray tracer. Further below is information on the implementation of the acceleration structure used.</p>
+					</div>
+					<br>
+
+					<h5>Rendered Images:</h5>
+					<hr>
+					<h6 class="title-submit">Scene4 - Ambient</h6>
+					<img class="image-submit" src="../resources/img/scene4-ambient.png">
+					<h6 class="title-submit">Scene4 - Diffuse</h6>
+					<img class="image-submit" src="../resources/img/scene4-diffuse.png">
+					<h6 class="title-submit">Scene4 - Emission</h6>
+					<img class="image-submit" src="../resources/img/scene4-emission.png">
+					<h6 class="title-submit">Scene4 - Specular</h6>
+					<img class="image-submit" src="../resources/img/scene4-specular.png">
+					<h6 class="title-submit">Scene5 - 1000 Spheres</h6>
+					<img class="image-submit" src="../resources/img/scene5.png">
+					<h6 class="title-submit">Scene6 - Cornell Box</h6>
+					<img class="image-submit" src="../resources/img/scene6.png">
+					<h6 class="title-submit">Scene7 - Dragon</h6>
+					<img class="image-submit" src="../resources/img/scene7.png">
+					<br>
+					<br>
+
+
+					<h5>Acceleration Structure:</h5>
+					<hr>
+					<div class="content">
+						<p>The most basic ray tracing algorithm performs intersection tests for each object for each ray (where each pixel corresponds to one ray). The ray tracing acceleration structure that I implemented was Bounding Volume Hierarchies (BVH). This allows for a reduction in the number of objects each ray must test against; more specifically, the number of objects being tested against becomes logarithmic. This significantly reduces the time necessary for ray tracing, especially when the number of objects in the scene is large.</p>
+
+						<p>Implementation of BVH can be divided into two major steps: (1) building the bounding volume hierarchy and (2) calculating for the intersection between the ray and objects. The bounding volume hierarchy that I implemented was a binary tree where a given internal node represented a bounding box containing 1 or more sub-bounding boxes and a given leaf node represented a single bounding box and the corresponding single object. The tree was built from the top-down where in the initial stage, a bounding box was calculated such that it contained all of the objects. The bounding box was then subdivided along the midpoint on a given axis (x, y or z axis), and all objects on each side of the subdivision were put into separate recursive calls to create bounding boxes for. The resulting bounding box hierachy was then returned. </p>
+
+						<p>The second step in BVH was to perform ray intersection tests with each of the bounding boxes. Initially, a given ray was tested for whether or not it intersected the largest bounding box. If not, then the given ray misses all objects in the scene and the next ray intersection is computed. If there is an intersection, then each of the containing bounding boxes are tested against, until it intersects a leaf node's bounding box, at which point the ray performs the intersection test with the sphere or triangle. The minimum intersection is used as the intersection point for the given ray.</p>
+
+						<p>A speed comparison between the ray tracer with and without the implementation of BVH is shown in the table below. The test renders each of the images as a 64x48 px image and the time is measure in milliseconds (time calculated as per the C++ chrono library). Notice that the time disparity with and without the acceleration structure is most significant with scenes 5 and 7, which contain many more objects in the scenes. These runtimes differences are as expected and indicate that the acceleration structure is most beneficial for large scenes. </p>
+
+						<table>
+							<tr>
+								<th></th>
+								<th>No Acceleration (ms)</th>
+								<th>BVH Acceleration (ms)</th>
+							</tr>
+							<tr>
+								<td>Scene 4</td>
+								<td>119</td>
+								<td>75</td>
+							</tr>
+							<tr>
+								<td>Scene 5</td>
+								<td>12424</td>
+								<td>6160</td>
+							</tr>
+							<tr>
+								<td>Scene 6</td>
+								<td>368/td>
+								<td>260</td>
+							</tr>
+							<tr>
+								<td>Scene 7</td>
+								<td>127138</td>
+								<td>48410</td>
+							</tr>
+						</table>
+					</div>
+					<br>
+				</div>
+				<div class="footer-wrapper">
+                    <p>&#64 2021 ronankonishi.github.io</p>
+                </div>
+			</div>
+		</div>
+		<script rel="javascript" src="resources/js/script.js"></script>
+	</body>
+</html>

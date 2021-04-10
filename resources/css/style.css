@@ -300,3 +300,19 @@ a.link:hover{
 	font-weight: 400 !important;
 	font-size: 14px !important;
 }
+
+/*CSE 168*/
+.title-submit {
+	text-align: center;
+	font-weight: 500;
+	padding-top: 10px;
+}
+
+.image-submit {
+	display: block;
+	width: 70%;
+	height: 70%;
+	padding-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
