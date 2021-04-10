@@ -62,34 +62,35 @@
 						<p>The second step in BVH was to perform ray intersection tests with each of the bounding boxes. Initially, a given ray was tested for whether or not it intersected the largest bounding box. If not, then the given ray misses all objects in the scene and the next ray intersection is computed. If there is an intersection, then each of the containing bounding boxes are tested against, until it intersects a leaf node's bounding box, at which point the ray performs the intersection test with the sphere or triangle. The minimum intersection is used as the intersection point for the given ray.</p>
 
 						<p>A speed comparison between the ray tracer with and without the implementation of BVH is shown in the table below. The test renders each of the images as a 64x48 px image and the time is measure in milliseconds (time calculated as per the C++ chrono library). Notice that the time disparity with and without the acceleration structure is most significant with scenes 5 and 7, which contain many more objects in the scenes. These runtimes differences are as expected and indicate that the acceleration structure is most beneficial for large scenes. </p>
-
-						<table>
-							<tr>
-								<th></th>
-								<th>No Acceleration (ms)</th>
-								<th>BVH Acceleration (ms)</th>
-							</tr>
-							<tr>
-								<td>Scene 4</td>
-								<td>119</td>
-								<td>75</td>
-							</tr>
-							<tr>
-								<td>Scene 5</td>
-								<td>12424</td>
-								<td>6160</td>
-							</tr>
-							<tr>
-								<td>Scene 6</td>
-								<td>368/td>
-								<td>260</td>
-							</tr>
-							<tr>
-								<td>Scene 7</td>
-								<td>127138</td>
-								<td>48410</td>
-							</tr>
-						</table>
+						<div>
+							<table class="cse168-table">
+								<tr>
+									<th></th>
+									<th>No Acceleration (ms)</th>
+									<th>BVH Acceleration (ms)</th>
+								</tr>
+								<tr>
+									<td>Scene 4</td>
+									<td>119</td>
+									<td>75</td>
+								</tr>
+								<tr>
+									<td>Scene 5</td>
+									<td>12,424</td>
+									<td>6,160</td>
+								</tr>
+								<tr>
+									<td>Scene 6</td>
+									<td>368</td>
+									<td>260</td>
+								</tr>
+								<tr>
+									<td>Scene 7</td>
+									<td>127,138</td>
+									<td>48,410</td>
+								</tr>
+							</table>
+						</div>
 					</div>
 					<br>
 				</div>
