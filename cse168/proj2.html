@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../resources/css/style.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
+
+		<title>CSE 168 | Ronan Konishi</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="inner-wrap">
+				<div class="nav-wrapper">
+					<div class="logo">
+						<h1><a href="index.html">CSE 168 | Ronan Konishi</a></h1>
+					</div>
+					<ul>
+						<li><a href="proj2.html">Proj 2</a></li>
+						<li><a href="proj1.html">Proj 1</a></li>
+					</ul>
+					<div style="margin-top: 13px ">
+						<hr>
+					</div>
+				</div>
+
+				<div class="main about">
+					<h5>Direct Lighting, Assignment 2:</h5>
+					<hr>
+					<div class="content">
+						<p>This project is based off of the previous Ray Tracing, Assignment 1 project. Just as in Assignment 1, the codebase was written in C++ with no external graphics libraries (e.g. Optix, OpenGL). All of the library functionality for vectors, matricies, and their corresponding mathematical operations were implemented by me.</p>
+
+						<p>The goal of this assignment was to implement direct lighting of area light sources for the ray tracer with accurate phycially-based rendering. The core theory behind realistic direct lighting was the rendering equation. By using the rendering equation, two techniques were employeed: analytic and Monte Carlo sampling. The analytic solution was noise-free, but could only render simple scenes with no shadows. The Monte Carlo solution allowed for soft shadows because it sampled multiple points per pixel rendered on the area light. To reduce noise, stratified sampling, was employeed.</p>
+
+						<p>As for my personal impression of this assignment, I found it to be very satisfying. This was the first time I implemented physically-based lighting, and was a huge milestone in terms of my computer graphics journey. While the theory was very heavy in mathematics (both requiring Calculus and Linear Algebra), it was nice seeing all of the math I learned through school being used to develop something real and tangible.</p>
+					</div>
+					<br>
+
+					<h5>Rendered Images:</h5>
+					<hr>
+					<h6 class="title-submit">Analytic</h6>
+					<img class="image-submit" src="../resources/img/analytic.png">
+					<h6 class="title-submit">Direct 3x3</h6>
+					<img class="image-submit" src="../resources/img/direct3x3.png">
+					<h6 class="title-submit">Direct 9</h6>
+					<img class="image-submit" src="../resources/img/direct9.png">
+					<h6 class="title-submit">Sphere</h6>
+					<img class="image-submit" src="../resources/img/sphere.png">
+					<h6 class="title-submit">Cornell</h6>
+					<img class="image-submit" src="../resources/img/cornell.png">
+					<h6 class="title-submit">Dragon</h6>
+					<img class="image-submit" src="../resources/img/dragon.png">
+					<br>
+					<br>
+				</div>
+				<div class="footer-wrapper">
+                    <p>&#64 2021 ronankonishi.github.io</p>
+                </div>
+			</div>
+		</div>
+		<script rel="javascript" src="resources/js/script.js"></script>
+	</body>
+</html>
