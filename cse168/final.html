@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../resources/css/style.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
+
+		<title>CSE 168 | Ronan Konishi</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="inner-wrap">
+				<div class="nav-wrapper">
+					<div class="logo">
+						<h1><a href="index.html">CSE 168 | Ronan Konishi</a></h1>
+					</div>
+					<ul>
+						<li><a href="final.html">Final</a></li>
+						<li><a href="proj4.html">Proj 4</a></li>
+						<li><a href="proj3.html">Proj 3</a></li>
+						<li><a href="proj2.html">Proj 2</a></li>
+						<li><a href="proj1.html">Proj 1</a></li>
+					</ul>
+					<div style="margin-top: 13px ">
+						<hr>
+					</div>
+				</div>
+
+				<div class="main about">
+					<h5>Final Project Proposal</h5>
+					<hr>
+					<div class="content">
+						<p><u>Project Overview:</u></p>
+
+						<p>For my final project, I will attempt to develop a real-time renderer in C++, utilizing the OpenGL library. It will be built from the ground up, requiring me to implement everything from the basic canvas to render to, to the entire process of generating, shading, and transforming models. A more exhaustive list of features are listed below.</p>
+
+						<ol>
+							<li>Canvas creation</li>
+							<li>User input (keyboard, mouse, scroll wheel)</li>
+							<li>Coordinate Systems (local, world, camera, clip, screen)</li>
+							<li>Controllable Camera</li>
+							<li>Model importations and Model/Mesh creation</li>
+							<li>GLSL shaders (vertex, geometry [exploding/reconstructing, fur (visualizing normals)], and fragment)</li>
+							<li>Textures</li>
+							<li>Basic Lighting</li>
+							<li>Environment maps (mirror, phong)</li>
+							<li>Shadow mapping (percentage-closer filtering for antialiasing for soft shadows)</li>
+							<li>Ambient Occlusion (SSAO)</li>
+						</ol>
+
+						<p>1-7 are complete at the time of the proposal submission (with the exception of geometry shaders). 8-11 are not yet completed.</p>
+						
+						<br>
+						<p><u>Project Requirements:</u></p>
+						<p>This project aligns with project 3.2 “Basic High Quality Rendering.” Note that all of the project requirements are met:</p>
+						<ol>
+							<li>GLSL Shaders are implemented (the non-standard effects are implemented via geometry shaders).</li>
+							<li>Shadow mapping is implemented</li>
+							<li>Environment mapping is implemented</li>
+							<li>The two add-ons are (1) Phong shading with environment maps and (2) Ambient Occlusion (SSAO)</li>
+						</ol>
+
+						<br>
+						<p><u>Next Steps:</u></p>
+						<p>Over the next week, I will continue implementing each of the aforementioned features, starting first with basic lighting, then environment maps, then shadow mapping, then ambient occlusion and lastly geometry shaders. I hope to render each of these components in a single, real-time program, but will also develop individual programs to demonstrate each major feature separately.</p>
+					</div>
+					<br>
+
+
+					<h5>Demos:</h5>
+					<hr>
+					<div style="text-align: center;">
+						<video class="image-attachment-square" controls>
+							<source src="../resources/vid/proposal.mp4" type="video/mp4">
+						</video>
+						<p style="text-align: center;">Fig. 1 Project Proposal Demo</p>
+					</div>
+					<br>
+					<br>
+				</div>
+				<div class="footer-wrapper">
+                    <p>&#64 2021 ronankonishi.github.io</p>
+                </div>
+			</div>
+		</div>
+		<script rel="javascript" src="resources/js/script.js"></script>
+	</body>
+</html>
