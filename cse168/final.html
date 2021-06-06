@@ -16,6 +16,7 @@
 					</div>
 					<ul>
 						<li><a href="final.html">Final</a></li>
+						<li><a href="finalproposal.html">Final Proposal</a></li>
 						<li><a href="proj4.html">Proj 4</a></li>
 						<li><a href="proj3.html">Proj 3</a></li>
 						<li><a href="proj2.html">Proj 2</a></li>
@@ -27,12 +28,12 @@
 				</div>
 
 				<div class="main about">
-					<h5>Final Project Proposal</h5>
+					<h5>Final Project</h5>
 					<hr>
 					<div class="content">
 						<p><u>Project Overview:</u></p>
 
-						<p>For my final project, I will attempt to develop a real-time renderer in C++, utilizing the OpenGL library. It will be built from the ground up, requiring me to implement everything from the basic canvas to render to, to the entire process of generating, shading, and transforming models. A more exhaustive list of features are listed below.</p>
+						<p>For my final project, I developed a real-time renderer in C++, utilizing the OpenGL library. It was  built from the ground up, requiring me to implement everything from the basic canvas to render to, to the entire process of generating, shading, and transforming models. A more exhaustive list of features are listed below.</p>
 
 						<ol>
 							<li>Canvas creation</li>
@@ -40,29 +41,30 @@
 							<li>Coordinate Systems (local, world, camera, clip, screen)</li>
 							<li>Controllable Camera</li>
 							<li>Model importations and Model/Mesh creation</li>
-							<li>GLSL shaders (vertex, geometry [exploding/reconstructing, fur (visualizing normals)], and fragment)</li>
+							<li>GLSL shaders (vertex and fragment)</li>
+							<li>Phong Shading</li>
 							<li>Textures</li>
-							<li>Basic Lighting</li>
-							<li>Environment maps (mirror, phong)</li>
-							<li>Shadow mapping (percentage-closer filtering for antialiasing for soft shadows)</li>
-							<li>Ambient Occlusion (SSAO)</li>
+							<li>Basic Lighting (Directional and Point)</li>
+							<li>Environment maps (mirror reflections, diffuse through uniform hemispherical sampling)</li>
+							<li>Shadow mapping</li>
+							<li>Diffuse and Specular Mapping (through textures)</li>
 						</ol>
 
-						<p>1-7 are complete at the time of the proposal submission (with the exception of geometry shaders). 8-11 are not yet completed.</p>
-						
 						<br>
 						<p><u>Project Requirements:</u></p>
 						<p>This project aligns with project 3.2 “Basic High Quality Rendering.” Note that all of the project requirements are met:</p>
 						<ol>
-							<li>GLSL Shaders are implemented (the non-standard effects are implemented via geometry shaders).</li>
+							<li>GLSL Shaders are implemented (difficult effects without glsl shaders include phong shading, diffuse and specular mapping, and diffuse environment mapping).</li>
 							<li>Shadow mapping is implemented</li>
-							<li>Environment mapping is implemented</li>
-							<li>The two add-ons are (1) Phong shading with environment maps and (2) Ambient Occlusion (SSAO)</li>
+							<li>Environment mapping (reflective) is implemented</li>
+							<li>The two add-ons are (1) Diffuse lighting with environment maps and (2) diffuse and specular mapping</li>
 						</ol>
 
 						<br>
-						<p><u>Next Steps:</u></p>
-						<p>Over the next week, I will continue implementing each of the aforementioned features, starting first with basic lighting, then environment maps, then shadow mapping, then ambient occlusion and lastly geometry shaders. I hope to render each of these components in a single, real-time program, but will also develop individual programs to demonstrate each major feature separately.</p>
+						<p><u>Final words</u></p>
+						<p>Unfortunately, I had to cut out some of the plans I had for this project due to a lack of time. I hoped to implement geometry shaders to generate fur, perentage-closer filtering for antialiasing for soft shadows, and ambient occlusion (SSAO). However, I realized that the mentioned features would consume too much time and I would not be able to produce a working demonstration by the deadline. Therefore, I had to replace some of the more time-consuming tasks with ones that could be implemented by the deadline. Note that, while the replacement features meet the requirement, I am dissapointed that I did not have the time to implement all of the components I had initially planned. Hopefully this summer I can implement the rest of the features (and more). Thank you to the entire CSE 168 faculty. I learned so much this quarter and I have definitely discovered a new interest in computer graphics.</p>
+						<br>
+						<p>Below are a series of videos that demonstrate each of the features described above. Note that each of these run in real time.</p>
 					</div>
 					<br>
 
@@ -71,9 +73,41 @@
 					<hr>
 					<div style="text-align: center;">
 						<video class="image-attachment-square" controls>
-							<source src="../resources/vid/proposal.mp4" type="video/mp4">
+							<source src="../resources/vid/final1.mp4" type="video/mp4">
 						</video>
-						<p style="text-align: center;">Fig. 1 Project Proposal Demo</p>
+						<p style="text-align: center;">Fig. 1 Phong Lighting Model, multiple point lights, single directional light</p>
+					</div>
+					<br>
+					<br>
+					<div style="text-align: center;">
+						<video class="image-attachment-square" controls>
+							<source src="../resources/vid/final2.mp4" type="video/mp4">
+						</video>
+						<p style="text-align: center;">Fig. 2 Specular and Diffuse Mapping, single point light</p>
+					</div>
+					<br>
+					<br>
+					<div style="text-align: center;">
+						<video class="image-attachment-square" controls>
+							<source src="../resources/vid/final3.mp4" type="video/mp4">
+						</video>
+						<p style="text-align: center;">Fig. 3 Shadow Mapping, Texture Mapping</p>
+					</div>
+					<br>
+					<br>
+					<div style="text-align: center;">
+						<video class="image-attachment-square" controls>
+							<source src="../resources/vid/final4.mp4" type="video/mp4">
+						</video>
+						<p style="text-align: center;">Fig. 4 Diffuse Environment Mapping (8 spp)</p>
+					</div>
+					<br>
+					<br>
+					<div style="text-align: center;">
+						<video class="image-attachment-square" controls>
+							<source src="../resources/vid/final5.mp4" type="video/mp4">
+						</video>
+						<p style="text-align: center;">Fig. 5 Specular Environment Mapping</p>
 					</div>
 					<br>
 					<br>
